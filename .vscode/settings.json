@@ -1,0 +1,9 @@
+{
+  "python.defaultInterpreterPath": "C:/Users/sreej/OneDrive/Desktop/socialmedia/backend/venv/Scripts/python.exe",
+  "python.terminal.activateEnvironment": false,
+  "python.analysis.exclude": [
+    "C:/Users/sreej/AppData/Local/Programs/Python/Python313/Lib/**"
+  ],
+  "python.analysis.useLibraryCodeForTypes": true,
+  "python.analysis.typeCheckingMode": "basic"
+}

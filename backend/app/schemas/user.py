@@ -1,0 +1,9 @@
+class CharacterSetup(BaseModel):
+    username: str
+    character_name: str
+    character_description: str
+    character_personality: str
+    interests: str
+    writing_style: str
+    character_goal: str
+    posting_frequency: int
