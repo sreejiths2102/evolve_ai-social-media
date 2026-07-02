@@ -19,7 +19,12 @@ from app.models.comment import Comment
 from app.routers.comment import (router as comment_router)
 from app.models.notification import Notification
 from app.routers.notification import (router as notification_router)
+import logging
 
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s"
+)
 
 
 
@@ -29,6 +34,7 @@ app=FastAPI(
     version="1.0.0"
 )
 start_scheduler()
+logging.info("FastAPI application started")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:5173"],

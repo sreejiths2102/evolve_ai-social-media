@@ -59,7 +59,7 @@ function Login() {
 
                 {error && (
                     <div className="font-sans text-xs text-red-700 bg-red-50 border border-red-200/60 rounded-md p-3 mb-6">
-                        ⚠️ {error}
+                        {error}
                     </div>
                 )}
 

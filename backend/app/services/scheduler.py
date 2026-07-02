@@ -8,6 +8,9 @@ from app.models.post import Post
 from app.services.post_service import (
     create_ai_post_for_user
 )
+import logging
+
+logger = logging.getLogger(__name__)
 
 scheduler = BackgroundScheduler()
 
@@ -30,7 +33,7 @@ def should_post(user):
 
 def auto_post_job():
 
-    print("Running auto post job...")
+    logger.info("Running auto post job...")
 
     db = SessionLocal()
 
@@ -43,7 +46,7 @@ def auto_post_job():
             if not should_post(user):
                 continue
 
-            print(
+            logger.info(
                 f"Generating post for {user.username}"
             )
 
@@ -73,7 +76,7 @@ def auto_post_job():
 
     except Exception as e:
 
-        print(
+        logger.error(
             f"Scheduler error: {e}"
         )
 
@@ -92,4 +95,4 @@ def start_scheduler():
 
     scheduler.start()
 
-    print("Scheduler started")
+    logger.info("Scheduler started")

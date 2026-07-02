@@ -11,7 +11,10 @@ if DATABASE_URL is None:
     raise ValueError("DATABASE_URL environment variable is not set")
 
 engine=create_engine(
-    DATABASE_URL)
+    DATABASE_URL,
+    pool_pre_ping=True,
+    connect_args={"sslmode": "require"}
+    )
 
 SessionLocal=sessionmaker(
     autocommit=False,
